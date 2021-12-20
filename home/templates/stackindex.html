@@ -1,0 +1,43 @@
+{% load static %}
+
+
+
+<link
+    rel="stylesheet"
+    type="text/css" 
+    href="{% static 'home/css/bootstrap.css' %}"
+/>
+
+<html>
+
+    
+    <div class = "d-flex justify-content-center">
+        <div class="card d-flex justify-content-center" style="width: 12rem;">
+            <img src="{% static 'img/stack.png' %}" class="card-img-top" alt="...">
+            <div class="card-body d-flex text-center">
+              <p class="card-text text-center">Github Automated User Search</p>
+            </div>
+          </div>
+    </div>
+ 
+    <nav class="navbar navbar-light bg-light d-flex justify-content-center">
+        <div class="">
+          <form class="d-flex" action=" {% url 'stacksearchbar' %}" method="get">
+              {% csrf_token %}
+            <input class="form-control me-2" type="text" placeholder="Username" aria-label="Search" name ="search">
+            <button class="btn btn-outline-warning" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class = "d-flex justify-content-center">Search a user Stack Exchange</div>
+      <div></div>
+      <form class="d-flex justify-content-center" action=" {% url 'index' %}" method="get">
+        {% csrf_token %}
+        <div class="d-flex justify-content-center"> 
+            <button class="btn btn-outline-success"  type="submit">Switch to Github</button>
+        </div>
+  
+     
+      
+      
+</html>

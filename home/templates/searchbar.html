@@ -1,0 +1,76 @@
+{% load static %}
+
+
+
+<link
+    rel="stylesheet"
+    type="text/css" 
+    href="{% static 'home/css/bootstrap.css' %}"
+/>
+
+<html>
+
+    
+    <div class = "d-flex justify-content-center">
+        <div class="card d-flex justify-content-center" style="width: 12rem;">
+            <img src="{% static 'img/git.png' %}" class="card-img-top" alt="...">
+            <div class="card-body d-flex text-center">
+              <p class="card-text text-center">Github Automated User Search</p>
+            </div>
+          </div>
+    </div>
+ 
+    <nav class="navbar navbar-light bg-light d-flex justify-content-center">
+        <div class="">
+          <form class="d-flex" action=" {% url 'searchbar' %}" method="get">
+            <input class="form-control me-2" type="text" placeholder="Username" aria-label="Search" name = "search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      {% if response.message == "Not Found" %}
+        <div class = "d-flex justify-content-center">Search not found</div>
+        {% else %}
+        <form method = "POST">
+            {% csrf_token %}
+        <div class = "d-flex justify-content-center">
+            <img src="{{response.avatar_url}}" class="card-img-top" alt="..." style="width: 18rem;">
+            <div class="card" style="width: 18rem;">
+                
+                <div class="card-body">
+                  <h5 class="card-title">
+                     <div name = "name"> {{response.name}}</div>
+                    </h5>
+                    <div name = "location" class ="card-text">Location : {{response.location}}</div>
+                    <p class="card-text"></p>
+                    <div name = "email">Mail: {{response.email}} </div>
+    
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li name = "company" class="list-group-item">Company: {{response.company}}</li>
+                  <li class="list-group-item"><a href="{{response.html_url}}?tab=repositories">Repos:</a> 
+                    <span name = "repos">{{response.public_repos}}</span> , 
+                    <a href="{{response.html_url}}?tab=gists"> Gists: </a> <span name = "gists">{{response.public_gists}}</span> </li>
+                  <li class="list-group-item"> <a href="{{response.html_url}}?tab=followers">Followers: </a> 
+                    <span name = "followers">{{response.followers}}</span> ,
+                    <a href="{{response.html_url}}?tab=following"> Following: </a>
+                    <span name = "following">{{response.following}}</span></li>
+                </ul>
+                <div class="card-body">
+                 Link:  <a href="{{response.html_url}}" class="card-link">
+                     <span name = "link" method = "post">{{response.html_url}}</span></a>
+                
+                </div>
+              </div>
+          </div>
+        {%endif%}
+    </form>
+    <form class="d-flex justify-content-center" action=" {% url 'stackindex' %}" method="get">
+      {% csrf_token %}
+      <div class="d-flex justify-content-center"> 
+          <button class="btn btn-outline-warning"  type="submit">Switch to Stack Exchange</button>
+      </div>
+  
+      
+      
+</html>
