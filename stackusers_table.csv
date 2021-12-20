@@ -1,0 +1,12 @@
+id,stackname,isemployee,reputation,weeklyrepchange,monthlyrepchange,linkurl
+1,Mike Seymour,False,239801,30,350,https://stackoverflow.com/users/204847/mike-seymour
+2,Michael Borgwardt,False,332310,20,568,https://stackoverflow.com/users/16883/michael-borgwardt
+3,Sergey Kalinichenko,False,688379,30,1190,https://stackoverflow.com/users/335858/sergey-kalinichenko
+4,Paul Dixon,False,283924,30,470,https://stackoverflow.com/users/6521/paul-dixon
+5,Paul Dixon,False,283924,30,470,https://stackoverflow.com/users/6521/paul-dixon
+6,Paul Dixon,False,283924,30,470,https://stackoverflow.com/users/6521/paul-dixon
+7,Paul Dixon,False,283924,30,470,https://stackoverflow.com/users/6521/paul-dixon
+8,Paul Lammertsma,False,36149,0,90,https://stackoverflow.com/users/154306/paul-lammertsma
+9,Paul Dixon,False,283924,30,470,https://stackoverflow.com/users/6521/paul-dixon
+10,Sarah Vessels,False,28854,0,90,https://stackoverflow.com/users/38743/sarah-vessels
+11,mwaskom,False,38885,0,234,https://stackoverflow.com/users/1533576/mwaskom
