@@ -24,7 +24,7 @@ def searchbar(request):
     if request.method == 'GET':
         search = request.GET.get('search')
         response = requests.get('https://api.github.com/users/' + str(search)).json()
-        if  len(str(response)) < 100  :
+        if  len(str(response)) < 150  :
              return render(request, "searchbar.html", {'response': response})  
         else:     
             saveRecord = users()
